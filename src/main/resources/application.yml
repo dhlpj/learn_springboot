@@ -6,9 +6,9 @@ spring:
 
 # Student should config datasource here
   datasource:
-    url: jdbc:mysql://${DB_HOST:127.0.0.1}:3306/${DB_NAME:future_star}
+    url: jdbc:mysql://${DB_HOST:127.0.0.1}:3306/${DB_NAME:future_star}?useUnicode=true&useSSL=false&characterEncoding=UTF-8
     username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:dev}
+    password: ${DB_PASSWORD:123456}
     driver-class-name: com.mysql.jdbc.Driver
     tomcat:
       max-active: 50

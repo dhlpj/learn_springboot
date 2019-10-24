@@ -1,3 +1,4 @@
+//为build.gradle 声明外部依赖,然后可以在这里面使用这些外部类
 buildscript {
     repositories {
         mavenCentral()
@@ -18,7 +19,7 @@ apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: "org.flywaydb.flyway"
 apply plugin: 'org.junit.platform.gradle.plugin'
-
+//指定打包后jar的名称及版本
 jar {
     baseName = 'gs-rest-service'
     version = '0.1.0'
@@ -59,5 +60,5 @@ dependencies {
 flyway {
     url = 'jdbc:mysql://127.0.0.1:3306/future_star'
     user = 'root'
-    password = 'dev'
+    password = '123456'
 }

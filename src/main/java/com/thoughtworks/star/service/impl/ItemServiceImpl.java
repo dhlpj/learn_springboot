@@ -29,4 +29,21 @@ public class ItemServiceImpl implements ItemService {
     public List<Item> findAll() {
         return itemRepository.findAll();
     }
+
+    @Override
+    public Item findById(String id) {
+        return itemRepository.findOne(id);
+    }
+
+    @Override
+    @Transactional
+    public void updateItem(Item item) {
+        itemRepository.save(item);
+    }
+
+    @Override
+    @Transactional
+    public void deleteById(String id) {
+        itemRepository.delete(id);
+    }
 }

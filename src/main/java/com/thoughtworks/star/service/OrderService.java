@@ -8,4 +8,6 @@ public interface OrderService {
     Order create(List<String> itemIds);
 
     List<Order> findCurrentUserOrder();
+
+    List<Order> searchOrders(String keyword);
 }

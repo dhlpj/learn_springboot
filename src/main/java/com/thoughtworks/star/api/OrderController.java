@@ -5,6 +5,7 @@ import com.thoughtworks.star.entity.Order;
 import com.thoughtworks.star.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,4 +30,11 @@ public class OrderController {
     public List<Order> findOrders() {
         return orderService.findCurrentUserOrder();
     }
+
+    @GetMapping("/search")
+    @ResponseBody
+    public ResponseEntity<List<Order>> searchOrders(@RequestParam(defaultValue = "") String keyword) {
+        return ResponseEntity.ok(orderService.searchOrders(keyword));
+    }
+
 }
